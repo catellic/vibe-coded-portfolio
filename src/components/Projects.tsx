@@ -79,10 +79,10 @@ const Projects = () => {
       technologies: ["Vite", "React", "TypeScript", "Tailwind CSS"],
       demoUrl: "https://catellic.github.io/vibe-coded-portfolio/",
       githubUrl: "https://github.com/catellic/vibe-coded-portfolio",
-      image: "https://raw.githubusercontent.com/catellic/vibe-coded-portfolio/main/public/placeholder.svg",
+      image: "https://raw.githubusercontent.com/catellic/vibe-coded-portfolio/main/public/home.png",
       imageCandidates: [
         "https://raw.githubusercontent.com/catellic/vibe-coded-portfolio/main/public/og-image.png",
-        "https://raw.githubusercontent.com/catellic/vibe-coded-portfolio/main/public/placeholder.svg"
+        "https://raw.githubusercontent.com/catellic/vibe-coded-portfolio/main/public/home.png"
       ]
     }
   ];
