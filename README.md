@@ -16,9 +16,9 @@ This portfolio is not just a static site; it’s a reflection of my coding style
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** (e.g. React, Next.js, Vue)  
-- **Styling:** (e.g. Tailwind CSS, CSS Modules, Sass)  
-- **Hosting:** (e.g. Vercel, Netlify, GitHub Pages)  
+- **Frontend:** React
+- **Styling:** Tailwind CSS 
+- **Hosting:** GitHub Pages 
 - **Editor:** [Cursor](https://www.cursor.so/)
 
 > _Note: Replace the above stack with your actual technologies._
@@ -28,7 +28,7 @@ This portfolio is not just a static site; it’s a reflection of my coding style
 <!--
 Add screenshots or GIFs of your portfolio here.
 Example:
-![Homepage Screenshot](./screenshots/homepage.png)
+[Homepage Screenshot](./home.png)
 -->
 
 ## 📝 Getting Started
