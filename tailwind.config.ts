@@ -122,6 +122,15 @@ export default {
 						transform: 'translateY(-10px)'
 					}
 				}
+				,
+				'shine': {
+					'0%': { transform: 'translateX(-150%)' },
+					'100%': { transform: 'translateX(150%)' }
+				},
+				'tilt': {
+					'0%, 100%': { transform: 'rotate3d(1, 1, 0, 0deg)' },
+					'50%': { transform: 'rotate3d(1, 1, 0, 2deg)' }
+				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -129,7 +138,9 @@ export default {
 				'fade-in': 'fade-in 0.6s ease-out',
 				'slide-in': 'slide-in 0.5s ease-out',
 				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
-				'float': 'float 3s ease-in-out infinite'
+				'float': 'float 3s ease-in-out infinite',
+				'shine': 'shine 1.2s ease-in-out',
+				'tilt': 'tilt 6s ease-in-out infinite'
 			}
 		}
 	},

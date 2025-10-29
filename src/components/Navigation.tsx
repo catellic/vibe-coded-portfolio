@@ -23,13 +23,7 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-    setIsMobileMenuOpen(false);
-  };
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   return (
     <nav 
@@ -38,28 +32,30 @@ const Navigation = () => {
           ? "bg-background/80 backdrop-blur-md border-b border-border/50" 
           : "bg-transparent"
       }`}
+      role="navigation"
+      aria-label="Primary"
     >
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <button 
-            onClick={() => scrollToSection("#hero")}
-            className="text-xl font-bold gradient-text hover:scale-105 transition-transform"
+          <a 
+            href="#hero"
+            className="text-xl font-bold gradient-text hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded"
           >
-            &lt;JuniorDev /&gt;
-          </button>
+            &lt;ChristianCatelli /&gt;
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
-              <button
+              <a
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="text-muted-foreground hover:text-foreground transition-colors relative group"
+                href={item.href}
+                className="text-muted-foreground hover:text-foreground transition-colors relative group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded"
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-              </button>
+              </a>
             ))}
           </div>
 
@@ -79,13 +75,14 @@ const Navigation = () => {
           <div className="md:hidden py-4 border-t border-border/50 bg-background/95 backdrop-blur-sm">
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
-                <button
+                <a
                   key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-left text-muted-foreground hover:text-foreground transition-colors py-2"
+                  href={item.href}
+                  onClick={closeMobileMenu}
+                  className="text-left text-muted-foreground hover:text-foreground transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded"
                 >
                   {item.name}
-                </button>
+                </a>
               ))}
             </div>
           </div>

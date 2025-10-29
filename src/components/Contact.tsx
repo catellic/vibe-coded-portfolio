@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,22 +10,35 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "hello@juniordev.com",
-      href: "mailto:hello@juniordev.com"
+      value: "c.catelli@icloud.com",
+      href: "mailto:c.catelli@icloud.com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+39 339 679 1811",
+      href: "tel:+393396791811"
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "Italy",
       href: "#"
     }
   ];
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name || !email || !subject || !message) return;
+    const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${encodeURIComponent(message)}`;
+    const mailto = `mailto:c.catelli@icloud.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    window.location.href = mailto;
+  };
 
   return (
     <section id="contact" className="py-20 px-6 bg-secondary/20">
@@ -46,34 +60,40 @@ const Contact = () => {
               <CardTitle className="text-2xl gradient-text">Send a Message</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Name</label>
-                  <Input placeholder="Your name" className="bg-background/50" />
+              <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <label htmlFor="name" className="text-sm font-medium">Name</label>
+                    <Input id="name" placeholder="Your name" className="bg-background/50" required value={name} onChange={(e) => setName(e.target.value)} />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="text-sm font-medium">Email</label>
+                    <Input id="email" type="email" placeholder="your@email.com" className="bg-background/50" required value={email} onChange={(e) => setEmail(e.target.value)} />
+                  </div>
                 </div>
+                
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Email</label>
-                  <Input type="email" placeholder="your@email.com" className="bg-background/50" />
+                  <label htmlFor="subject" className="text-sm font-medium">Subject</label>
+                  <Input id="subject" placeholder="What's this about?" className="bg-background/50" required value={subject} onChange={(e) => setSubject(e.target.value)} />
                 </div>
-              </div>
-              
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Subject</label>
-                <Input placeholder="What's this about?" className="bg-background/50" />
-              </div>
-              
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Message</label>
-                <Textarea 
-                  placeholder="Tell me about your project or just say hello!" 
-                  className="bg-background/50 min-h-[120px]"
-                />
-              </div>
-              
-              <Button variant="glow" size="lg" className="w-full">
-                <Send className="h-5 w-5" />
-                Send Message
-              </Button>
+                
+                <div className="space-y-2">
+                  <label htmlFor="message" className="text-sm font-medium">Message</label>
+                  <Textarea 
+                    id="message"
+                    placeholder="Tell me about your project or just say hello!" 
+                    className="bg-background/50 min-h-[120px]"
+                    required
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                  />
+                </div>
+                
+                <Button type="submit" variant="glow" size="lg" className="w-full">
+                  <Send className="h-5 w-5" />
+                  Send Message
+                </Button>
+              </form>
             </CardContent>
           </Card>
           

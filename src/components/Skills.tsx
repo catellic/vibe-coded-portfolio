@@ -7,28 +7,28 @@ const Skills = () => {
     {
       category: "Frontend",
       skills: [
-        { name: "React", level: 75, color: "bg-blue-500" },
-        { name: "TypeScript", level: 70, color: "bg-blue-600" },
-        { name: "JavaScript", level: 80, color: "bg-yellow-500" },
-        { name: "HTML/CSS", level: 85, color: "bg-orange-500" },
-        { name: "Tailwind CSS", level: 75, color: "bg-cyan-500" }
+        { name: "HTML/CSS", level: 60, color: "bg-orange-500" },
+        { name: "JavaScript", level: 50, color: "bg-yellow-500" },
+        { name: "TypeScript", level: 10, color: "bg-blue-600" },
+        { name: "Tailwind CSS", level: 10, color: "bg-cyan-500" },
+        { name: "React", level: 0, color: "bg-blue-500" }
       ]
     },
     {
       category: "Backend & Tools",
       skills: [
-        { name: "Node.js", level: 60, color: "bg-green-500" },
-        { name: "Git/GitHub", level: 70, color: "bg-gray-600" },
-        { name: "REST APIs", level: 65, color: "bg-purple-500" },
-        { name: "MongoDB", level: 55, color: "bg-green-600" },
-        { name: "Vite", level: 70, color: "bg-purple-600" }
+        { name: "Git/GitHub", level: 60, color: "bg-gray-600" },
+        { name: "Node.js", level: 30, color: "bg-green-500" },
+        { name: "REST APIs", level: 30, color: "bg-purple-500" },
+        { name: "Vite", level: 10, color: "bg-purple-600" },
+        { name: "MongoDB", level: 10, color: "bg-green-600" }
       ]
     }
   ];
 
   const technologies = [
-    "React", "TypeScript", "JavaScript", "Node.js", "HTML5", "CSS3", 
-    "Tailwind CSS", "Git", "GitHub", "Vite", "REST APIs", "MongoDB", 
+    "HTML5", "CSS3", "JavaScript", "TypeScript", "React", 
+    "Tailwind CSS", "Git", "GitHub", "Vite", "REST APIs", "Node.js", "MongoDB", 
     "Responsive Design", "ES6+", "JSON", "npm"
   ];
 
