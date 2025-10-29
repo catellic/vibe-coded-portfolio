@@ -3,6 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 
+const BASE_URL = import.meta.env.BASE_URL || '/';
+const PLACEHOLDER_SRC = `${BASE_URL}placeholder.svg`;
+
 const Projects = () => {
   const projects = [
     // Handmade projects
@@ -122,7 +125,7 @@ const Projects = () => {
                       img.src = candidates[tried];
                       img.dataset.tried = String(tried + 1);
                     } else {
-                      img.src = "/placeholder.svg";
+                      img.src = PLACEHOLDER_SRC;
                       img.onerror = null;
                     }
                   }}

@@ -5,6 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // Ensure correct asset paths on GitHub Pages project site
+  base: mode === 'development' ? '/' : '/vibe-coded-portfolio/',
   server: {
     host: "::",
     port: 8080,
